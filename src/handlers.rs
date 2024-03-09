@@ -1,7 +1,8 @@
-use wrap::Filter;
+use warp::Filter;
 use super::models::Post;
 
-pub async fn get_post(id: u64) -> Result<impl warp::Reply, wrap::Rejection> {
+pub async fn get_post(id: u64) -> Result<impl warp::Reply, warp::Rejection> {
+    // For simplicity, let's say we are returning a static post
     let post = Post {
         id,
         title: String::from("Hello, Warp!"),
